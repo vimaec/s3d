@@ -12,10 +12,10 @@ The S3D file format is a [BFAST](https://github.com/ara3d/bfast) file consisting
 
 1. JSON manifest - Contains meta-information about the file and the assets encoded using UTF-8.
 2. Binary scene graph - A BFAST container of binary data describing the scene graph. 
-  1. Transforms - An array of matrices representing global transforms encoded as 4x4 single or double precision floating point vaues   
-  2. Geometry indexes - An array of indices indicating which geometric asset is associated 
-  3. Material indexes - An index indicating which material is associated with this node
-  4. Parent indices - An array of indices indicating the parent node
+    1. Transforms - An array of matrices representing global transforms encoded as 4x4 single or double precision floating point vaues   
+    2. Geometry indexes - An array of indices indicating which geometric asset is associated 
+    3. Material indexes - An index indicating which material is associated with this node
+    4. Parent indices - An array of indices indicating the parent node
 3. Object Metadata - UTF-8 encoded JSON properties 
 4. Material assets - A BFAST container of material descriptors. Encoding of the material descriptors is not defined by S3D.
 5. Geometric assets - A BFAST container of geometric descriptors. 
