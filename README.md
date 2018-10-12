@@ -2,25 +2,23 @@
 
 The S3D file format, is a simple alternative to FBX, Collada (DAE), USD, and glTF formats for storing and transmitting 3D scene graphs and dependent assets. The S3D data layout is the [BFAST](https://github.com/ara3d/bfast) data container format. 
 
-Unlike other formats S3D is agnostic about how tools choose to encode specific assets like the geometry, skin weights, or materials. It is a container for the scene graph that make it easy to efficiently get and set transform data and parent-child relationships. By not specifying these things S3D is less prone to change, easier to implement, and far more flexible. 
-
-To get the best performance and flexibility from your 3D scene data  we recommend using the [G3D format](https://github.com/ara3d/g3d) for encoding individual geometry assets. 
+Unlike other formats S3D is agnostic about how tools choose to encode specific assets such as meshes, skin weights, or materials. It is a container for the scene graph that make it easy to efficiently get and set transform data and parent-child relationships. By not specifying these things S3D is less prone to change, much easier to use, and far more flexible. 
 
 ## Specification 
 
-The S3D file format is a [BFAST](https://github.com/ara3d/bfast) file consisting of N data-buffers. The first 3 data-buffers have specific interpretation:
+The S3D file format is a [BFAST](https://github.com/ara3d/bfast) file consisting of 3 to 7 data-buffers with the following contents specific interpretation:
 
 1. JSON manifest - Contains meta-information about the file and the assets encoded using UTF-8.
 2. Binary scene graph - A BFAST container of binary data describing the scene graph. 
     1. Transforms - An array of matrices representing global transforms encoded as 4x4 single or double precision floating point vaues   
-    2. Geometry indexes - An array of indices indicating which geometric asset is associated 
-    3. Material indexes - An index indicating which material is associated with this node
+    2. Geometry indices - An array of indices indicating which geometric asset is associated 
+    3. Material indices - An index indicating which material is associated with this node
     4. Parent indices - An array of indices indicating the parent node
-3. Object Metadata - UTF-8 encoded JSON properties 
-4. Material assets - A BFAST container of material descriptors. Encoding of the material descriptors is not defined by S3D.
-5. Geometric assets - A BFAST container of geometric descriptors. 
-6. Texture assets - A BFAST container containing texture assets. Encoding of the texture assets is not defined by S3D. 
-7. Additional assets - A BFAST container of additional data files associated with the scene. 
+3. Geometric assets - A BFAST container of geometric descriptors. 
+4. (optional) Material assets - A BFAST container of material descriptors. Encoding of the material descriptors is not defined by S3D.
+5. (optional) Texture assets - A BFAST container containing texture assets. Encoding of the texture assets is not defined by S3D. 
+6. (optional) Object Metadata - UTF-8 encoded JSON properties.
+7. (optional) Additional assets - A BFAST container of additional data files associated with the scene. 
 
 ## Why not OBJ?
 
