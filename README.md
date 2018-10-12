@@ -14,11 +14,13 @@ The S3D file format is a [BFAST](https://github.com/ara3d/bfast) file consisting
     2. **Geometry indices** - An array of indices indicating which geometric asset is associated 
     3. **Material indices** - An index indicating which material is associated with this node
     4. **Parent indices** - An array of indices indicating the parent node
-3. **Geometric assets**- A BFAST container of geometric descriptors. 
-4. **Material assets** *(optional)* - A BFAST container of material descriptors. Encoding of the material descriptors is not defined by S3D.
-5. **Texture assets** *(optional)* - A BFAST container containing texture assets. Encoding of the texture assets is not defined by S3D. 
-6. ***Object metadata** *(optional)* - UTF-8 encoded JSON properties.
+3. **Geometric assets**- A BFAST container of geometric assets. 
+4. **Material assets** *(optional)* - A BFAST container of material descriptors. 
+5. **Texture assets** *(optional)* - A BFAST container containing texture assets. 
+6. **Object metadata** *(optional)* - UTF-8 encoded JSON properties.
 7. **Additional assets** *(optional)* - A BFAST container of additional data files associated with the scene. 
+
+The specific encoding of geometric, material, or texture assets is not specified by the format.
 
 ## Why not OBJ?
 
