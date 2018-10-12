@@ -8,17 +8,17 @@ Unlike other formats S3D is agnostic about how tools choose to encode specific a
 
 The S3D file format is a [BFAST](https://github.com/ara3d/bfast) file consisting of 3 to 7 data-buffers with the following contents specific interpretation:
 
-1. JSON manifest - Contains meta-information about the file and the assets encoded using UTF-8.
-2. Binary scene graph - A BFAST container of binary data describing the scene graph. 
-    1. Transforms - An array of matrices representing global transforms encoded as 4x4 single or double precision floating point vaues   
-    2. Geometry indices - An array of indices indicating which geometric asset is associated 
-    3. Material indices - An index indicating which material is associated with this node
-    4. Parent indices - An array of indices indicating the parent node
-3. Geometric assets - A BFAST container of geometric descriptors. 
-4. (optional) Material assets - A BFAST container of material descriptors. Encoding of the material descriptors is not defined by S3D.
-5. (optional) Texture assets - A BFAST container containing texture assets. Encoding of the texture assets is not defined by S3D. 
-6. (optional) Object Metadata - UTF-8 encoded JSON properties.
-7. (optional) Additional assets - A BFAST container of additional data files associated with the scene. 
+1. **JSON manifest** - Contains meta-information about the file and the assets encoded using UTF-8.
+2. **Binary scene graph** - A BFAST container of binary data describing the scene graph. 
+    1. **Transforms** - An array of matrices representing global transforms encoded as 4x4 single or double precision floating point vaues   
+    2. **Geometry indices** - An array of indices indicating which geometric asset is associated 
+    3. **Material indices** - An index indicating which material is associated with this node
+    4. **Parent indices** - An array of indices indicating the parent node
+3. **Geometric assets**- A BFAST container of geometric descriptors. 
+4. (optional) **Material assets** - A BFAST container of material descriptors. Encoding of the material descriptors is not defined by S3D.
+5. (optional) **Texture assets** - A BFAST container containing texture assets. Encoding of the texture assets is not defined by S3D. 
+6. (optional) **Object metadata** - UTF-8 encoded JSON properties.
+7. (optional) **Additional assets** - A BFAST container of additional data files associated with the scene. 
 
 ## Why not OBJ?
 
